@@ -44,5 +44,5 @@ steps:
     verbose: true
     quiet: false
 
-- script: 'echo "File Zipped"'
+- script: 'echo "File Zipped, $(archiveFile)"'
   displayName: 'Writing a message'
