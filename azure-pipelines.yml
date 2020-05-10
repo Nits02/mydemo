@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)"
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)"'
   displayName: 'Write build info'
 
 steps:
