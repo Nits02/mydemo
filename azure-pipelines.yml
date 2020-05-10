@@ -42,4 +42,5 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
     replaceExistingArchive: true 
     verbose: true
-    #quiet: # Optional
+    'echo "File Zipped"'
+    #quiet: false
