@@ -41,18 +41,5 @@ steps:
     tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
     replaceExistingArchive: true 
-    #verbose: # Optional
+    verbose: true
     #quiet: # Optional
-
-- task: DotNetCoreCLI@2
-  displayName: 'Publish the project'
-  inputs:
-    command: 'publish'
-    projects: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    publishWebProjects: false
-    arguments: '--no-build --configuration Release --output $(Build.ArtifactStagingDirectory)/Release'
-    zipAfterPublish: true
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  condition: succeeded()
