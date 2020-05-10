@@ -41,7 +41,6 @@ steps:
     tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
     replaceExistingArchive: true 
-    projects: **/*.zip
     #verbose: # Optional
     #quiet: # Optional
 
@@ -49,7 +48,7 @@ steps:
   displayName: 'Publish the project'
   inputs:
     command: 'publish'
-    projects: '**/*.zip'
+    projects: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     publishWebProjects: false
     arguments: '--no-build --configuration Release --output $(Build.ArtifactStagingDirectory)/Release'
     zipAfterPublish: true
