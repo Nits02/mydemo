@@ -21,8 +21,11 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber), $(Build.BinariesDirectory), $(Build.ArtifactStagingDirectory), $(buildConfiguration)"'
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)"'
   displayName: 'Write build info'
+
+- script: 'echo "$(Build.BinariesDirectory), $(Build.ArtifactStagingDirectory), $(buildConfiguration)"'
+  displayName: 'Write user or system variable'
 
 # Archive files
 # Compress files into .7z, .tar.gz, or .zip
