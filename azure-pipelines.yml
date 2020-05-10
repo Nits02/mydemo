@@ -50,6 +50,7 @@ steps:
 - script: 'echo "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip"'
   displayName: 'Writing a message'
 
+# Publish The Zipped File
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
   inputs:
