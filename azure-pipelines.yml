@@ -47,16 +47,3 @@ steps:
 
 - script: 'echo "$(archiveFile)"'
   displayName: 'Writing a message'
-
-- task: DotNetCoreCLI@2
-  displayName: 'Publish the project'
-  inputs:
-    command: 'publish'
-    projects: 'Artifacts.zip'
-    publishWebProjects: false
-    arguments: '--no-build --configuration Release --output Artifacts.zip'
-    zipAfterPublish: false
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  condition: succeeded()
