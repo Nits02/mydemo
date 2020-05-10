@@ -11,6 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  rootFolderOrFile: '/d/Nitesh/Git/mydemo'
 
 steps:
 - script: echo Hello, world!
@@ -25,8 +26,10 @@ steps:
   displayName: 'Write build info'
 
 - script: 'echo "$(Build.BinariesDirectory), $(Build.ArtifactStagingDirectory), $(buildConfiguration)"'
-  displayName: 'Write user or system variable'
+  displayName: 'Write system variable'
 
+- script: 'echo "$(buildConfiguration), $(rootFolderOrFile)"'
+  displayName: 'Write user variable'
 # Archive files
 # Compress files into .7z, .tar.gz, or .zip
 #- task: ArchiveFiles@2
