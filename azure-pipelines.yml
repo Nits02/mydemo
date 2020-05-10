@@ -51,7 +51,7 @@ steps:
   displayName: 'Writing a message'
 
 - task: PublishBuildArtifacts@1
-inputs:
+  inputs:
   PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
