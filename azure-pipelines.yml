@@ -21,7 +21,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber), $(Build.BinariesDirectory), $(Build.ArtifactStagingDirectory)"'
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber), $(Build.BinariesDirectory), $(Build.ArtifactStagingDirectory), $(buildConfiguration)"'
   displayName: 'Write build info'
 
 # Archive files
