@@ -42,5 +42,7 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
     replaceExistingArchive: true 
     verbose: true
-    'echo "File Zipped"'
     #quiet: false
+
+- script: 'echo "File Zipped"'
+  displayName: 'Writing a message'
