@@ -45,5 +45,9 @@ steps:
     verbose: true
     quiet: false
 
-- script: 'echo "$(archiveFile)"'
+- script: 'echo "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip"'
   displayName: 'Writing a message'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: succeeded()
