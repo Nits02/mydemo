@@ -47,6 +47,7 @@ steps:
     verbose: true
     quiet: false
 
+# Printing the variable
 - script: 'echo "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip"'
   displayName: 'Writing a message'
 
